@@ -10,15 +10,23 @@
         width: 100%;
         height: 360px;
         object-fit: cover;
+        margin-bottom: 16px;
       }
     </style>
   </head>
   <body>
+    {% include "nav.html" %}
+    <img class="img-fluid" id="banner" src="static/banner.jpeg">
     <div class="container">
       <h1 class="text-center mt-2 mb-4">Python Pathways</h1>
-      <img class="img-fluid" id="banner" src="static/banner.jpeg">
-      <h2 class="text-center">About Python Pathways</h2>
+      <div class="row" style="margin-bottom:16px">
+        <div class="col-md-6">
       <p class="lead">Navigate Your Career Journey in the World of Python Programming. Explore Opportunities, Gain Insights, and Connect with Professionals in the Python Community. Your Gateway to Success in the Python Universe!</p>
+        </div>
+        <div class= "d-none d-md-block col-md-6">
+        <img src="/static/people.jpg" style="height:320px; border-radius:4px;">
+        </div>
+      </div>
       <h2 class="text-center mt-2 mb-4">Open Positions</h2>
       <div>
         {% for job in jobs %}
@@ -26,9 +34,9 @@
         {% endfor %}
       </div>
       <div class="text-center">
-        <button class="btn btn-primary btn-lg">Contact Us</button>
-        <p class="mt-4">Copyright 2023, Python Pathways</p>
+        <a class="btn btn-primary btn-lg" href="mailto:hello@pythonpathways.onrender.com?subject=Question%20about%20job%20openings&body=My%20name%3A%20%3Cyour%20name%20here%3E%0D%0A%0D%0AMy%20question%3A%20%3Cyour%20question%20here%3E%0D%0A">Contact Us</a>
       </div>
     </div>
+    {% include "footer.html" %}
   </body>
 </html>
